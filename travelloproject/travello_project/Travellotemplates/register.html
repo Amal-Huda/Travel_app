@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration app</title>
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #3498db; /* Background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+         .form1 {
+            background-color: #fff; /* Form background color */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Box shadow for a border effect */
+            text-align: center;
+        }
+        .form1 h2 {
+            color: #333;
+        }
+        .form1 button:hover {
+            background-color: #2980b9; /* Button color on hover */
+        }
+        .form1 input[type="submit"] {
+            background-color: #3498db; /* Button color */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form1 input[type="text"],
+        .form1 input[type="password"],
+         .form1 input[type="email"] {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div  align="centre" class="form1"  >
+    <h2>Register Here  </h2>
+<form  method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="enter your username"><BR>
+    <input type="text" name="fname" placeholder="enter first name"><BR>
+    <input type="text" name="lname" placeholder="enter your lastname"><BR>
+    <input type="email" name="email" placeholder="enter email"><BR>
+    <input type="password" name="pword" placeholder="enter password"><BR>
+    <input type="password" name="cpword" placeholder="enter password again"><BR>
+    <input type="submit" name="button" value="Register">
+</form>
+    <br>
+    {% for i in messages %}
+    {{i}}
+    {% endfor %}
+</div>
+</body>
+</html>

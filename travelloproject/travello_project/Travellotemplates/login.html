@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:border="http://www.w3.org/1999/xhtml" xmlns:padding="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #3498db; /* Background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+         .form1 {
+            background-color: #fff; /* Form background color */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Box shadow for a border effect */
+            text-align: center;
+        }
+        .form1 h2 {
+            color: #333;
+        }
+        .form1 button:hover {
+            background-color: #2980b9; /* Button color on hover */
+        }
+        .form1 input[type="submit"] {
+            background-color: #3498db; /* Button color */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form1 input[type="text"],
+        .form1 input[type="password"] {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+
+
+</head>
+<body  >
+
+<br>
+<div  align="centre" class="form1"  >
+    <h2>Login Here<br></h2>
+<form  method="POST">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Username"><br><br>
+
+    <input type="password" name="pword" placeholder="Password"><br><br>
+
+    <input type="submit" name="b" value="Login">
+
+</form>
+</div>
+<br>
+{% for i in messages %}
+<h1>{{i}}</h1>
+{% endfor %}
+
+</body>
+</html>
